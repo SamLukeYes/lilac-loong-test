@@ -1,0 +1,12 @@
+build_prefix: extra-loong64
+
+pre_build_script: |
+  vcs_update()
+  for line in edit_file('PKGBUILD'):
+    if line.startswith('arch='):
+      line = 'arch=(aarch64 x86_64)'
+
+post_build: git_pkgbuild_commit
+
+update_on:
+  - source: vcs
