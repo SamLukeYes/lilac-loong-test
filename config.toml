@@ -24,7 +24,7 @@ master = "Sam L. Yes <samlukeyes123@gmail.com>"
 # Set and unsubscribe_address to receive unsubscribe requests
 # unsubscribe_address = "unsubscribe@example.com"
 # Set to yes to automatically rebuild packages which failed to build last time
-rebuild_failed_pkgs = false
+rebuild_failed_pkgs = true
 git_push = false
 # Set a prefix for commit messages
 # commit_msg_prefix = ''
@@ -41,7 +41,7 @@ max_concurrency = 2
 
 [nvchecker]
 # set proxy for nvchecker
-# proxy = "http://localhost:8000"
+proxy = "http://10.0.2.2:7890"
 
 [smtp]
 # You can configure a SMTP account here; it defaults to localhost:53
