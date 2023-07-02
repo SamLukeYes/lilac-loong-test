@@ -81,7 +81,7 @@ postrun = [
 # mount these paths as tmpfs in the chroot
 tmpfs = [
   # bazel's cache causes failures frequently
-  "/build/.cache/bazel"
+  # "/build/.cache/bazel"
 ]
 
 # vim: se ft=toml:
