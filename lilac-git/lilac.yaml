@@ -1,7 +1,9 @@
 build_prefix: extra-loong64
 
 pre_build: vcs_update
-post_build: git_pkgbuild_commit
+post_build_script: |
+  git_pkgbuild_commit()
+  _run_cmd(['cp' '*.pkg.tar*' '~/repo/aur/spool'])
 
 update_on:
   - source: vcs
