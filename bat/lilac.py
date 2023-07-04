@@ -11,4 +11,3 @@ def pre_build():
 def post_build():
     git_add_files(g.files)
     git_commit()
-    subprocess.run(['cp' '*.pkg.tar*' '~/repo/extra/spool'])

@@ -6,8 +6,6 @@ pre_build_script: |
 
 post_build_script: |
   git_pkgbuild_commit()
-  subprocess.run(['cp' '*.pkg.tar*' '~/repo/aur/spool'])
-  subprocess.run(['sleep', '5'])
 
 update_on:
   - source: vcs

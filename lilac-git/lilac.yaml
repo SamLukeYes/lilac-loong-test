@@ -1,9 +1,11 @@
 build_prefix: extra-loong64
 
+repo_depends:
+  - pid_children-git
+
 pre_build: vcs_update
 post_build_script: |
   git_pkgbuild_commit()
-  subprocess.run(['cp' '*.pkg.tar*' '~/repo/aur/spool'])
 
 update_on:
   - source: vcs
