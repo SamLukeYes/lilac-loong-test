@@ -1,4 +1,5 @@
 build_prefix: extra-loong64
+destsubdir: aur
 
 repo_depends:
   - pid_children-git

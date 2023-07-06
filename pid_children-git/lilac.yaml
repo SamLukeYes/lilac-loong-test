@@ -1,4 +1,5 @@
 build_prefix: extra-loong64
+destsubdir: aur
 
 pre_build_script: |
   add_into_array('arch', ['loong64'])

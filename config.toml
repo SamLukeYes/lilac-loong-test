@@ -12,7 +12,7 @@ email = "loongarch@localhost"
 repodir = "~/lilac-loong-test"
 # The path where built packages and signatures are copied to
 # comment out if there's no need to copy built packages
-# destdir = "/path/to/pkgdir"
+destdir = "~/repo/spool"
 
 [lilac]
 # this is the name in the mail header and subject
