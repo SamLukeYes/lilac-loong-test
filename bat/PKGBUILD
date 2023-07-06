@@ -3,7 +3,7 @@
 
 pkgname=bat
 pkgver=0.23.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Cat clone with syntax highlighting and git integration'
 arch=("loong64" "x86_64")
 url='https://github.com/sharkdp/bat'
@@ -14,7 +14,7 @@ source=("git+$url#commit=871abd27aa91264e01539da849add0330b24cb9c") # tag: v0.23
 b2sums=('SKIP')
 
 prepare() {
-  cargo fetch --locked --manifest-path $pkgname/Cargo.toml
+  cargo update --manifest-path $pkgname/Cargo.toml
 }
 
 build() {
