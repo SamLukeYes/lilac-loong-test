@@ -1,4 +1,3 @@
-build_prefix: extra-loong64
 destsubdir: aur
 
 repo_depends:
@@ -11,4 +10,4 @@ post_build_script: |
 update_on:
   - source: vcs
   - source: manual
-    manual: 2
+    manual: 3

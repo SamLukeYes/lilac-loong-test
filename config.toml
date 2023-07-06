@@ -39,6 +39,8 @@ send_email = false
 # dburl = "postgresql:///"
 max_concurrency = 2
 
+default_build_prefix = "extra-loong64"
+
 [nvchecker]
 # set proxy for nvchecker
 proxy = "http://10.0.2.2:7890"
