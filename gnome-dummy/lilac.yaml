@@ -1,0 +1,5 @@
+destsubdir: extra
+
+update_on:
+  - source: manual
+    manual: 1
