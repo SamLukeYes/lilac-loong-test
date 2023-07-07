@@ -1,7 +1,7 @@
 destsubdir: extra
 
 pre_build_script: |
-  _G.files = download_official_pkgbuild('nix')
+  _G.files = download_official_pkgbuild('mdbook-linkcheck')
   add_into_array('arch', ['loong64'])
 
 post_build_script: |
@@ -10,8 +10,4 @@ post_build_script: |
 
 update_on:
   - source: archpkg
-    alpm: nix
-
-repo_makedepends:
-  - mdbook-linkcheck
-  - rapidcheck
+    alpm: mdbook-linkcheck
