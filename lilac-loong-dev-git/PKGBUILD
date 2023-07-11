@@ -21,7 +21,7 @@ optdepends=(
 checkdepends=(python-pytest python-pytest-asyncio)
 provides=("$_pkgname=$pkgver")
 conflicts=("$_pkgname")
-source=("git+$url.git#branch=dev")
+source=("$_pkgname::git+$url.git#branch=dev")
 sha256sums=('SKIP')
 
 pkgver() {
