@@ -15,7 +15,7 @@ def detailed_list(summary: str, items: deque[str]) -> str:
     if not items:
         return ""
     _list = "- " + '\n- '.join(items)
-    return f"<details><summary>{summary}</summary>\n{_list}</details>\n"
+    return f"<details><summary>{summary}</summary>\n\n{_list}</details>\n"
 
 def pop_log():
     return json.loads(logs.pop())
