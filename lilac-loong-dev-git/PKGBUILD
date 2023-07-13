@@ -5,7 +5,7 @@
 _pkgname=lilac
 pkgname=$_pkgname-loong-dev-git
 pkgver=r1105.5afabcc
-pkgrel=4
+pkgrel=5
 pkgdesc='The build bot for Loong Arch Linux'
 arch=(any)
 url='https://github.com/SamLukeYes/lilac-loong'
