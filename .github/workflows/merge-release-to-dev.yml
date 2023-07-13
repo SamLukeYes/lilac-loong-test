@@ -1,0 +1,21 @@
+name: "merge release to dev"
+
+on:
+  pull_request:
+    branches:
+      - release
+    types: [closed]
+
+jobs:
+  merge:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Merge release to dev
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: release
+          target_branch: dev
+          github_token: ${{ secrets.GITHUB_TOKEN }}
