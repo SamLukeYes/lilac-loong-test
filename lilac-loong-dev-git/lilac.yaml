@@ -1,0 +1,13 @@
+destsubdir: aur
+
+repo_depends:
+  - pid_children-git
+
+pre_build: vcs_update
+post_build_script: |
+  git_pkgbuild_commit()
+
+update_on:
+  - source: vcs
+  - source: manual
+    manual: 1
