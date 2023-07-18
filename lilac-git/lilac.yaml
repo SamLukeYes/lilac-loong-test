@@ -8,6 +8,7 @@ post_build_script: |
   git_pkgbuild_commit()
 
 update_on:
+  - alias: python
   - source: vcs
   - source: manual
     manual: 4

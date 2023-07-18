@@ -18,4 +18,5 @@ jobs:
           type: now
           from_branch: release
           target_branch: dev
+          message: merge release to dev
           github_token: ${{ secrets.GITHUB_TOKEN }}
