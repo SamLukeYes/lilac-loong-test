@@ -7,3 +7,4 @@ post_build_script: |
 
 update_on:
   - source: vcs
+  - alias: python
