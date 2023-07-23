@@ -11,4 +11,4 @@ post_build_script: |
 update_on:
   - source: vcs
   - source: manual
-    manual: 3
+    manual: 4
