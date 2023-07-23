@@ -1,8 +1,8 @@
 build_prefix: lilac-loong64
 destsubdir: aur
 
-# repo_depends:
-#   - pid_children-git
+repo_depends:
+  - pid_children-git
 
 pre_build: vcs_update
 post_build_script: |
