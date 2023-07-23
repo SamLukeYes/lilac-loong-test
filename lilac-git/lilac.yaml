@@ -1,4 +1,4 @@
-build_prefix: lilac-loong64
+# build_prefix: lilac-loong64
 destsubdir: aur
 
 repo_depends:
@@ -11,7 +11,8 @@ post_build_script: |
 update_on:
   - alias: python
   - source: vcs
-  - source: alpm
+  - source: alpm-lilac
+    repo: lilac-aur
     alpm: pid_children-git
   - source: manual
     manual: 4
