@@ -1,0 +1,6 @@
+destsubdir: aur
+
+update_on:
+  - source: alpm-lilac
+    repo: lilac-aur
+    alpm: lilac-test1
