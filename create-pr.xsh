@@ -14,8 +14,8 @@ logs = deque(open(f'{$HOME}/.lilac/build-log.json'))
 successful = deque()
 failed = deque()
 
-def comment($pr, $title, $body):
-    gh pr comment $pr --body f"{$title}\n{$body}"
+def comment(pr, title, body):
+    gh pr comment @(pr) --body f"{title}\n{body}"
 
 def detailed_list(summary: str, items: deque[str]) -> str:
     if not items:
@@ -55,7 +55,7 @@ $BODY = detailed_list(
 touch $REBUILD_FILE
 
 if not successful:
-    if os.isfile($PR_URL_FILE):
+    if os.path.isfile($PR_URL_FILE):
         $PR = open(f'{$HOME}/.lilac/pr').read().strip()
         if failed:
             comment($PR, $TITLE, $BODY)
