@@ -59,7 +59,7 @@ if not successful:
         $PR = open(f'{$HOME}/.lilac/pr').read().strip()
         if failed:
             comment($PR, $TITLE, $BODY)
-        gh pr ready
+        gh pr ready $PR
     rm $REBUILD_FILE
 else:
     draft_pr()
