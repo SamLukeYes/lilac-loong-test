@@ -1,0 +1,9 @@
+destsubdir: aur
+
+repo_depends:
+  - lilac-test1
+
+update_on:
+  - source: alpm-lilac
+    repo: lilac-aur
+    alpm: lilac-test1

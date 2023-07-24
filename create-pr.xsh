@@ -31,6 +31,7 @@ def draft_pr():
     else:   # PR already exist
         $PR = gh_pipeline.errors.split()[-1]
         comment($PR, $TITLE, $BODY)
+        gh pr ready $PR --undo
     echo $PR > $PR_URL_FILE
     touch $REBUILD_FILE
 
@@ -55,7 +56,7 @@ $BODY = detailed_list(
 touch $REBUILD_FILE
 
 if not successful:
-    if os.path.isfile($PR_URL_FILE):
+    if os.path.isfile($REBUILD_FILE):
         $PR = open(f'{$HOME}/.lilac/pr').read().strip()
         if failed:
             comment($PR, $TITLE, $BODY)
