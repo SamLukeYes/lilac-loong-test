@@ -3,19 +3,36 @@
 from collections import deque
 import json
 import datetime
+import os
 
 $BASE = "release"
 $HEAD = "master"
+$PR_URL_FILE = f"{$HOME}/.lilac/pr"
+$REBUILD_FILE = f"{$HOME}/.lilac/rebuild"
 
 logs = deque(open(f'{$HOME}/.lilac/build-log.json'))
 successful = deque()
 failed = deque()
+
+def comment($pr, $title, $body):
+    gh pr comment $pr --body f"{$title}\n{$body}"
 
 def detailed_list(summary: str, items: deque[str]) -> str:
     if not items:
         return ""
     _list = "- " + '\n- '.join(items)
     return f"<details><summary>{summary}</summary>\n\n{_list}</details>\n"
+
+def draft_pr():
+    gh_pipeline = !(gh pr create --draft --base $BASE --head $HEAD --title $TITLE --body $BODY)
+    if gh_pipeline:
+        $PR = gh_pipeline.output.rstrip()
+        echo $PR
+    else:   # PR already exist
+        $PR = gh_pipeline.errors.split()[-1]
+        comment($PR, $TITLE, $BODY)
+    echo $PR > $PR_URL_FILE
+    touch $REBUILD_FILE
 
 def pop_log():
     return json.loads(logs.pop())
@@ -28,11 +45,6 @@ while (event := (log := pop_log())['event']) != "build start":
     elif event == "failed":
         failed.appendleft(f"`{log['pkgbase']}`: {log['error']}")
 
-if not successful:
-    print('No package was built.')
-    exit(1)
-
-# $TEMP = $(mktemp).rstrip()
 $TITLE = f'lilac build {datetime.datetime.fromtimestamp(ts)}'
 $BODY = detailed_list(
     f"Successfully built {len(successful)} packages", successful
@@ -40,14 +52,14 @@ $BODY = detailed_list(
     f"Failed to build {len(failed)} packages", failed
 )
 
-gh_pipeline = !(gh pr create --base $BASE --head $HEAD --title $TITLE --body $BODY)
+touch $REBUILD_FILE
 
-if gh_pipeline:
-    $PR = gh_pipeline.output.rstrip()
-    echo $PR
-else:   # PR already exist
-    $PR = gh_pipeline.errors.split()[-1]
-    gh pr comment $PR --body f"{$TITLE}\n{$BODY}"
-
-# rm $TEMP
-echo $PR > ~/.lilac/pr
+if not successful:
+    if os.isfile($PR_URL_FILE):
+        $PR = open(f'{$HOME}/.lilac/pr').read().strip()
+        if failed:
+            comment($PR, $TITLE, $BODY)
+        gh pr ready
+    rm $REBUILD_FILE
+else:
+    draft_pr()
