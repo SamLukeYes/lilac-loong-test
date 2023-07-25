@@ -4,6 +4,6 @@ repo_depends:
   - lilac-test1
 
 update_on:
-  - source: alpm-lilac
+  - source: alpm
     repo: lilac-aur
     alpm: lilac-test1
