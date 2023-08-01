@@ -57,7 +57,7 @@ touch $REBUILD_FILE
 
 if not successful:
     if os.path.isfile($REBUILD_FILE):
-        $PR = open(f'{$HOME}/.lilac/pr').read().strip()
+        $PR = open($PR_URL_FILE).read().strip()
         if failed:
             comment($PR, $TITLE, $BODY)
         gh pr ready $PR
