@@ -1,0 +1,13 @@
+destsubdir: extra
+
+pre_build_script: |
+  _G.files = download_official_pkgbuild('pypy3')
+  add_into_array('arch', ['loong64'])
+
+post_build_script: |
+  git_add_files(_G.files)
+  git_commit()
+
+update_on:
+  - source: archpkg
+    alpm: pypy3
