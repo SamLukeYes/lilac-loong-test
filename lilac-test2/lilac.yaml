@@ -1,7 +1,7 @@
 destsubdir: aur
 
-# repo_depends:
-#   - lilac-test1
+repo_depends:
+  - lilac-test1
 
 update_on:
   - source: alpm
