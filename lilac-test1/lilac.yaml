@@ -4,5 +4,5 @@ update_on:
   - source: manual
     manual: 9
 
-update_on_build:
-  - pkgbase: lilac-test2
+# update_on_build:
+#   - pkgbase: lilac-test2
