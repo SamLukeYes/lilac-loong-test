@@ -1,0 +1,9 @@
+# Maintainer: Sam L. Yes <samlukeyes123 at gmail dot com>
+
+pkgname=lilac-test3
+pkgver=1
+pkgrel=1
+pkgdesc='Dummy package for lilac testing.'
+arch=("any")
+url='https://github.com/SamLukeYes/lilac-loong-test'
+license=(Unlicense)

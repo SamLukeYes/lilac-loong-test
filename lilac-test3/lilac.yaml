@@ -1,0 +1,4 @@
+destsubdir: aur
+
+update_on_build:
+  - pkgbase: lilac-test3
