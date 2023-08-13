@@ -10,3 +10,5 @@ destsubdir: aur
 
 update_on_build:
   - pkgbase: lilac-test1
+    from_pattern: ^(\d+)\..*
+    to_pattern: \1
