@@ -1,9 +1,14 @@
 destsubdir: aur
 
-repo_depends:
-  - lilac-test1
+# repo_depends:
+#   - lilac-test1
 
-update_on:
-  - alias: alpm-lilac
-    repo: lilac-aur
-    alpm: lilac-test1
+# update_on:
+#   - alias: alpm-lilac
+#     repo: lilac-aur
+#     alpm: lilac-test1
+
+update_on_build:
+  - pkgbase: lilac-test1
+    from_pattern: ^(\d+)\..*
+    to_pattern: \1
