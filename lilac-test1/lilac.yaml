@@ -2,7 +2,7 @@ destsubdir: aur
 
 update_on:
   - source: manual
-    manual: 14
+    manual: 15
 
 # update_on_build:
 #   - pkgbase: lilac-test2
