@@ -1,8 +1,8 @@
 # Maintainer: Sam L. Yes <samlukeyes123 at gmail dot com>
 
 pkgname=lilac-test1
-_major=8
-_minor=2
+_major=9
+_minor=0
 pkgver=$_major.$_minor
 pkgrel=1
 pkgdesc='Dummy package for lilac testing.'
