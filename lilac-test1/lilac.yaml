@@ -1,8 +1,10 @@
+build_prefix: lilac-loong64
+
 destsubdir: aur
 
 update_on:
   - source: manual
-    manual: 15
+    manual: 19
 
 # update_on_build:
 #   - pkgbase: lilac-test2
