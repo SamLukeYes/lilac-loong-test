@@ -1,0 +1,28 @@
+# Maintainer: Sam L. Yes <samlukeyes123 at gmail dot com>
+
+pkgname=lilac-test4
+_major=0
+_minor=0
+pkgver=$_major.$_minor
+pkgrel=1
+pkgdesc='Dummy package for lilac testing.'
+arch=(x86_64 loong64)
+url='https://github.com/SamLukeYes/lilac-loong-test'
+license=(Unlicense)
+source=('lilactest.c' 'lilactest.h')
+sha256sums=('SKIP' 'SKIP')
+depends=('glibc')
+_soname=liblilactest4.so
+
+build() {
+    cd "$srcdir"
+    gcc -fPIC -shared -o $_soname lilactest.c
+}
+
+package() {
+    cd "$srcdir"
+    install -Dm644 $_soname "$pkgdir/usr/lib/$_soname.$_major.$_minor"
+    ln -s "$_soname.$_major.$_minor" "$pkgdir/usr/lib/$_soname"
+    ln -s "$_soname.$_major.$_minor" "$pkgdir/usr/lib/$_soname.$_major"
+    install -Dm644 lilactest.h "$pkgdir/usr/include/lilactest.h"
+}
