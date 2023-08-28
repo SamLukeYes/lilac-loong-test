@@ -4,7 +4,7 @@ destsubdir: aur
 
 update_on:
   - source: manual
-    manual: 2
+    manual: 3
 
 update_on_soname:
   - pkgbase: lilac-test1
