@@ -4,8 +4,8 @@ destsubdir: aur
 
 update_on:
   - source: manual
-    manual: 7
+    manual: 8
 
 update_on_soname:
-  - pkgbase: lilac-test1
+  - pkgname: lilac-test1
     libs: [ liblilactest.so ]
