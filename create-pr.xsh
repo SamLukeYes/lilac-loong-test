@@ -44,7 +44,7 @@ while (event := (log := pop_log())['event']) != "build start":
     if event == "successful":
         successful.appendleft(log['pkgbase'])
     elif event == "failed":
-        failed.appendleft(f"`{log['pkgbase']}`: {log['error']}")
+        failed.appendleft(f"`{log['pkgbase']}`: {log['exception']}")
 
 $TITLE = f'lilac build {datetime.datetime.fromtimestamp(ts)}'
 $BODY = detailed_list(
