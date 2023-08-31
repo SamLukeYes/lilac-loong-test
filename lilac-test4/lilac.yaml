@@ -1,0 +1,14 @@
+build_prefix: lilac-loong64
+
+destsubdir: aur
+
+repo_depends:
+  - lilac-test1
+
+update_on:
+  - source: manual
+    manual: 12
+
+update_on_soname:
+  - pkgname: lilac-test1
+    libs: [ liblilactest.so ]

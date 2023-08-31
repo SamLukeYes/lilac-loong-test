@@ -11,8 +11,8 @@ $PR_URL_FILE = f"{$HOME}/.lilac/pr"
 $REBUILD_FILE = f"{$HOME}/.lilac/rebuild"
 
 logs = deque(open(f'{$HOME}/.lilac/build-log.json'))
-successful = deque()
-failed = deque()
+successful = set()
+failed = set()
 
 def comment(pr, title, body):
     gh pr comment @(pr) --body f"{title}\n{body}"
@@ -42,9 +42,9 @@ ts = pop_log()['ts']
 
 while (event := (log := pop_log())['event']) != "build start":
     if event == "successful":
-        successful.appendleft(log['pkgbase'])
+        successful.add(log['pkgbase'])
     elif event == "failed":
-        failed.appendleft(f"`{log['pkgbase']}`: {log['error']}")
+        failed.add(log['pkgbase'])
 
 $TITLE = f'lilac build {datetime.datetime.fromtimestamp(ts)}'
 $BODY = detailed_list(
