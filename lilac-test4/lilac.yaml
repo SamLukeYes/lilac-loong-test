@@ -7,7 +7,7 @@ repo_depends:
 
 update_on:
   - source: manual
-    manual: 10
+    manual: 11
 
 update_on_soname:
   - pkgname: lilac-test1
