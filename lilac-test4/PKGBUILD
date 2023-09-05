@@ -12,7 +12,7 @@ license=(Unlicense)
 source=('lilactest.c' 'lilactest.h')
 sha256sums=('SKIP' 'SKIP')
 depends=('glibc')
-_soname=liblilactest4.so
+_soname=liblilactest-4.so
 
 build() {
     cd "$srcdir"
