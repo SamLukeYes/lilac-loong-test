@@ -8,4 +8,4 @@ update_on:
 
 update_on_soname:
   - pkgname: lilac-test4
-    libs: [ liblilactest4.so ]
+    libs: [ liblilactest-2.so ]
