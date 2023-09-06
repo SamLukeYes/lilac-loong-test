@@ -21,9 +21,9 @@ build() {
 package() {
     cd "$srcdir"
     install -Dm644 liblilactest.so "$pkgdir/usr/lib/liblilactest.so.$_major.$_minor"
+    install -Dm644 lilactest.h "$pkgdir/usr/include/lilactest.h"
     cd "$pkgdir/usr/lib"
     ln -s "liblilactest.so.$_major.$_minor" "liblilactest.so"
     ln -s "liblilactest.so.$_major.$_minor" "liblilactest.so.$_major"
     cp "liblilactest.so.$_major.$_minor" "liblilactest-0.so.$_major"
-    install -Dm644 lilactest.h "$pkgdir/usr/include/lilactest.h"
 }
