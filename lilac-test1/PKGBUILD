@@ -25,5 +25,5 @@ package() {
     cd "$pkgdir/usr/lib"
     ln -s "liblilactest.so.$_major.$_minor" "liblilactest.so"
     ln -s "liblilactest.so.$_major.$_minor" "liblilactest.so.$_major"
-    # cp "liblilactest.so.$_major.$_minor" "libalilactest.so.$_major"
+    cp "liblilactest.so.$_major.$_minor" "libalilactest.so.$_major"
 }
