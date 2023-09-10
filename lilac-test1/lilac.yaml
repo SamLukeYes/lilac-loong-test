@@ -6,7 +6,7 @@ post_build: git_pkgbuild_commit
 
 update_on:
   - source: manual
-    manual: 37
+    manual: 38
 
 update_on_soname:
   - pkgname: lilac-test4
