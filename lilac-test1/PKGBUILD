@@ -2,9 +2,9 @@
 
 pkgname=lilac-test1
 _major=9
-_minor=19
+_minor=20
 pkgver=$_major.$_minor
-pkgrel=3
+pkgrel=5
 pkgdesc='Dummy package for lilac testing.'
 arch=(x86_64 loong64)
 url='https://github.com/SamLukeYes/lilac-loong-test'
